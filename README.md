@@ -1,1 +1,1 @@
-# folder-structure-test
+# cmake-test
