@@ -3,3 +3,6 @@ buildした時にa.exeはbuild/testの中
 そこで、srcフォルダ内の.dllをコピーしてtestフォルダに入れる必要がある。
 
 一応、.dllの位置をcmake側で知らせることはできるはず。。。
+できた
+参考リンク
+https://theolizer.com/cpp-school3/cpp-school3-8/
