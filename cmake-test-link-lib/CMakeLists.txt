@@ -12,7 +12,7 @@ else()
   add_library(greetings STATIC hello.cpp good_morning.cpp)
 endif()
 
-add_executable(a main.cpp hello.cpp)
+add_executable(a main.cpp)
 
 # 'a'を作成する際にlibgreetings.soをリンク
 target_link_libraries(a greetings)
