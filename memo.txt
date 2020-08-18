@@ -6,3 +6,6 @@ cmake .. -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Debug
 <cmake-test-link-lib>
 cmake -DGREETINGS_BUILD_SHARED_LIBS=ON ..
 とすると共有ライブラリが作成される。
+
+参考リンク
+https://qiita.com/shohirose/items/45fb49c6b429e8b204ac#cmake%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B
