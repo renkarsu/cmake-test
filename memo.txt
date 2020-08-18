@@ -1,1 +1,4 @@
 cmake .. -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Debug
+
+でcmake実行するとmsys2のgccとかが使える。
+後ろのオプションは、デバッグビルド用のやつ。あまり使い方と使い分けは分かってない。
