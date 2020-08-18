@@ -6,3 +6,7 @@ buildした時にa.exeはbuild/testの中
 できた
 参考リンク
 https://theolizer.com/cpp-school3/cpp-school3-8/
+
+find_packageからtarget_link_libraryでいけそうって記述もあるけど、個人的に上の方が楽
+参考リンク
+https://qiita.com/shohirose/items/637f4b712893764a7ec1
