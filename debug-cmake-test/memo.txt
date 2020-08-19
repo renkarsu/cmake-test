@@ -1,6 +1,12 @@
-参考リンク
+<注意>
+.vscodeに造詣が深ければすぐに分かるが、debug-cmake-testフォルダを開けてF5を押さないとdebugできない
+なぜなら、.vscodeはdebug-cmake-testを指定しているので、cmake-testからactiveフォルダをdebug-cmake-test
+にしていてもcmake-testがワーキングディレクトリなので.vscodeが反応しないから。
+
+<参考リンク>
 https://qiita.com/yut-nagase/items/ced10f952b74f115c733
 
+<解説>
 大事なのは
 ・launch.json
 ・tasks.json
