@@ -10,7 +10,7 @@ https://qiita.com/yut-nagase/items/ced10f952b74f115c733
 大事なのは
 ・launch.json
 ・tasks.json
-・CMakeLists.json
+・CMakeLists.txt
 の三つ
 
 ・launch.jsonは普通にデバッグするときと同じ設定にしたファイルを用意し、
@@ -33,7 +33,7 @@ launch.jsonはデバッグ実行をする際の設定ファイル
   "${fileDirname}\\${fileBasenameNoExtension}.exe"
 ],
 
-・CMakeLists.jsonは普通に書けばよいが、launch.jsonで
+・CMakeLists.txtは普通に書けばよいが、launch.jsonで
 ```
 "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
 ```
@@ -42,12 +42,12 @@ launch.jsonはデバッグ実行をする際の設定ファイル
 に移動する。そして、buildフォルダ内で、main.cppのような実行するファイルの拡張子を除くmainという名前の後に、.exeを指定し
 main.exeというファイルをbuildファイル内に保存することを示している。
 
-実行ファイル名はmain(実行したいファイルの拡張子抜きの名前)なので、CMakelists.jsonでは
+実行ファイル名はmain(実行したいファイルの拡張子抜きの名前)なので、CMakeLists.txtでは
 ```
 # mainという実行ファイルをmain.cppから作成
 add_executable(main main.cpp)
 ```
 以下のように指定する必要がある。
-補足として、コンパイラオプションは理解していれば当然な話だが、CMakeLists.jsonに記載する。task.jsonではない。
+補足として、コンパイラオプションは理解していれば当然な話だが、CMakeLists.txtに記載する。task.jsonではない。
 なぜなら、task.jsonの"command"タグで指定しているコマンドが異なるからである。
 つまり、cmakeを使う場合と使わない場合でtask.jsonの"command"タグの内容が変化していることに注意してほしいということ。
