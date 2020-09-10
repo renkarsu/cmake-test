@@ -9,3 +9,46 @@ cmake -DGREETINGS_BUILD_SHARED_LIBS=ON ..
 
 参考リンク
 https://qiita.com/shohirose/items/45fb49c6b429e8b204ac#cmake%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B
+
+手順
+1. CMakeLists.txtを一つの階層(ルートディレクトリ, src, includeなど)に一つ配置する.
+2. mkdir build
+3. cd build
+4. cmake .. -G "MSYS Makefiles"
+：簡単に言うと, makefileが作られる
+5. make
+：buildされる
+
+```
+cmake_minimum_required(VERSION 3.8)
+project(test_cmake CXX)
+add_executable(a.out main.cpp)
+# 最適化・警告等のオプション
+target_compile_options(a.out PUBLIC -O2 -Wall)
+# C++11/14/17
+target_compile_features(a.out PUBLIC cxx_std_14)
+# マクロ
+target_compile_definitions(a.out PUBLIC NDEBUG _USE_MATH_DEFINES)
+```
+
+```
+cmake_minimum_required(VERSION 3.1)
+project(test_cmake CXX)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-O1 -Wall")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Og -g")
+add_subdirectory(src)
+add_subdirectory(test)
+```
+
+```
+> cmake ..                                    # デフォルト
+> cmake -DCMAKE_BUILD_TYPE=Debug ..           # デバッグ
+> cmake -DCMAKE_BUILD_TYPE=Release ..         # リリース
+> cmake -DCMAKE_BUILD_TYPE=MinSizeRel ..      # 最小サイズリリース
+> cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..  # デバッグ情報を加えたリリース
+```
+
